@@ -95,6 +95,7 @@ while wrong_guesses < max_attempts:
     # Take user input
     guess = input("\nGuess a letter: ").lower().strip()
 
+
     # Validate input
     if len(guess) != 1 or not guess.isalpha():
         print("Please enter only one alphabet letter!")
