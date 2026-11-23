@@ -72,6 +72,7 @@ hangman_art = [
     """
 ]
 
+
 print("\n===== HANGMAN WORD GUESSING GAME =====")
 
 while wrong_guesses < max_attempts:
