@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-11-24T10:22:05.592Z",
+  "files": {
+    "portfolio.py": {
+      "aiPct": 0,
+      "pastePct": 100,
+      "totalLines": 20
+    },
+    "stock_prices.csv": {
+      "aiPct": 0,
+      "pastePct": 0,
+      "totalLines": 6
+    }
+  },
+  "aggregate": {
+    "totalFiles": 2,
+    "totalLines": 26,
+    "aiPct": 0,
+    "pastePct": 77
+  }
+}
