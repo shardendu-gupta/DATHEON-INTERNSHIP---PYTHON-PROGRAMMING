@@ -39,3 +39,99 @@ The player gets a maximum of 6 incorrect attempts to guess the complete word. An
 - Guess the complete word to win.
 - If all 6 attempts are used, the game ends.
 
+
+
+
+
+# Stock Portfolio Performance Tracker
+
+## Project Overview
+
+The Stock Portfolio Performance Tracker is a Python project developed as part of my Datheon Python Development Internship (Task 2).
+
+This project helps users track their stock investments by calculating investment amounts, current market values, profit/loss, and percentage returns using stock prices stored in a CSV file.
+
+## Features
+
+- Enter multiple stock symbols.
+- Add buying price and quantity for each stock.
+- Read current stock prices from a CSV file.
+- Calculate total investment and market value.
+- Calculate individual stock profit/loss.
+- Calculate percentage returns.
+- Calculate overall portfolio performance.
+- Export portfolio summary to a CSV file.
+
+## Technologies Used
+
+- Python
+- CSV Module
+- File Handling
+- Dictionaries
+- Loops and Conditional Statements
+
+**Step 4: Enter Stock Details**
+
+Enter the following information when prompted:
+
+- Stock Symbol
+- Buying Price
+- Quantity
+
+**Step 5: View Portfolio Report**
+
+The program calculates the portfolio performance and automatically generates `portfolio_summary.csv`.
+
+## Sample Stock Data
+
+The `stock_prices.csv` file contains sample stock prices:
+
+| Symbol | Company | Current Price |
+|---|---|---:|
+| AAPL | Apple | 180 |
+| MSFT | Microsoft | 350 |
+| GOOGL | Google | 170 |
+| AMZN | Amazon | 190 |
+| NVDA | Nvidia | 140 |
+
+## Output
+
+The program displays:
+
+- Buying Price
+- Current Price
+- Quantity
+- Total Investment
+- Market Value
+- Profit/Loss
+- Return Percentage
+- Overall Portfolio Performance
+
+## Learning Outcomes
+
+Through this project, I practiced:
+
+- Python dictionaries and loops.
+- CSV file handling.
+- Reading and writing CSV files.
+- Performing financial calculations.
+- Working with structured data.
+
+## Note
+
+The stock prices included in this project are sample values for demonstration purposes and are not live market prices.
+
+## Internship
+
+Developed as part of the Datheon Python Development Internship – Task 2.
+
+
+
+
+
+
+
+
+
+
+
