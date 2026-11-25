@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-11-25T06:42:56.688Z",
+  "files": {
+    "words.txt": {
+      "aiPct": 0,
+      "pastePct": 99,
+      "totalLines": 100
+    }
+  },
+  "aggregate": {
+    "totalFiles": 1,
+    "totalLines": 100,
+    "aiPct": 0,
+    "pastePct": 99
+  }
+}

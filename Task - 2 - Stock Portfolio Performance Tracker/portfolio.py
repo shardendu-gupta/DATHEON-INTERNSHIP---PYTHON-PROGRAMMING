@@ -79,3 +79,22 @@ print("Total Market Value:", round(total_market_value, 2))
 print("Total Profit/Loss:", round(total_profit_loss, 2))
 print("Total Return:", round(total_percentage, 2), "%")
 
+
+with open("portfolio_summary.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Stock Symbol", "Buying Price", "Current Price", "Quantity", "Investment", "Market Value", "Profit/Loss", "Return Percentage"])
+
+    for stock, details in portfolio.items():
+        if stock in current_prices:
+
+            buying_price = details["buying_price"]
+            quantity = details["quantity"]
+            current_price = current_prices[stock]
+            invested_amount = buying_price * quantity
+            market_value = current_price * quantity
+            profit_loss = market_value - invested_amount
+            percentage = (profit_loss / invested_amount) * 100
+            writer.writerow([stock, buying_price, current_price, quantity, invested_amount, market_value, round(profit_loss, 2), round(percentage, 2)])
+
+
+print("\nPortfolio report saved successfully!")
