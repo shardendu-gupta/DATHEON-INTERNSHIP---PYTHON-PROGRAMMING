@@ -1,4 +1,3 @@
-
 import csv
 
 portfolio = {}
@@ -8,53 +7,48 @@ current_prices = {}
 
 while True:
 
-    stock_symbol = input("Enter stock symbol: ").upper()
+    stock_symbol = input("Enter stock symbol: ").strip().upper()
     buying_price = float(input("Enter buying price: "))
     quantity = int(input("Enter quantity: "))
-
-    portfolio[stock_symbol] = {
-        "buying_price": buying_price,
-        "quantity": quantity
-    }
-
+    portfolio[stock_symbol] = {"buying_price": buying_price, "quantity": quantity}
     choice = input("Do you want to add another stock? (yes/no): ").lower()
 
     if choice == "no":
         break
 
 
-# Read current stock prices from CSV
-
-with open("stock_prices.csv", "r") as file:
-
-    reader = csv.DictReader(file)
-
+with open("stock_prices.csv", "r", encoding="utf-8-sig") as file:
+    reader = csv.reader(file)
     for row in reader:
-        current_prices[row["Symbol"]] = float(row["Current Price"])
 
+        if len(row) < 3:
+            continue
 
-# Calculate portfolio value
+        if row[0].strip().lower() == "symbol":
+            continue
+
+        stock_symbol = row[0].strip().upper()
+        current_price = float(row[2].strip())
+        current_prices[stock_symbol] = current_price
+
 
 total_investment = 0
 total_market_value = 0
 
 print("\n------ PORTFOLIO SUMMARY ------")
 
-for stock, details in portfolio.items():
 
+for stock, details in portfolio.items():
+    
     buying_price = details["buying_price"]
     quantity = details["quantity"]
 
     if stock in current_prices:
-
         current_price = current_prices[stock]
-
         invested_amount = buying_price * quantity
         market_value = current_price * quantity
-
         profit_loss = market_value - invested_amount
         percentage = (profit_loss / invested_amount) * 100
-
         total_investment += invested_amount
         total_market_value += market_value
 
@@ -78,11 +72,10 @@ if total_investment > 0:
 else:
     total_percentage = 0
 
+
 print("\n------ TOTAL PORTFOLIO ------")
 print("Total Investment:", round(total_investment, 2))
 print("Total Market Value:", round(total_market_value, 2))
 print("Total Profit/Loss:", round(total_profit_loss, 2))
 print("Total Return:", round(total_percentage, 2), "%")
-
-
 
